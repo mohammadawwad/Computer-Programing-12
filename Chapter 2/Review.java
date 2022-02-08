@@ -34,5 +34,70 @@ APPLYING TECHNOLOGY SKILLS
   }
 
 
+2)
+  public class Apple{
+    private int color;
+    private int type;
+    //^ both color and type would be examples of fields
+
+    public int getColor(){
+      return color;
+    }
+    //^ getColor() is a method
+
+    public int getType(){
+      return type;
+    }
+    //^ getType() is another method
+  }
+
+
+3)
+  public class Apple extends Fruit{
+    //^ when creating the class the 'extends' key word is the sepcialization which allows you to inherit the parent component and make it more detailed
+
+    private Stem stem;
+    private Peel peel;
+    private Core core;
+
+    private int size = Orange.size();
+    //^ this is an example of composition as it is connected to another class and method within it
+
+    private int Type();
+
+    public int getType(){
+      return type;
+    }
+  }
+
+4)
+  x = a + b;              //good
+  x equals a plus b;      //syntax error
+  x = a - b;              //semantic error
+  c = b + a;              //symantic error
+  x = (b + a);            //good
+  a + b = x;              //syntax error
+  x = a * b;              //semantic error
+  assign (a + b) to x;    //syntax error
+
+
+5)
+  <HTML>
+    <HEAD>
+      <TITLE>Java Programming ins Fun!</TITLE>
+      //^ the title tag indicates that there will be title at the top saying 'Java Programming is Fun!'
+    </HEAD>
+
+    <BODY>
+    //^ body tag indicates that there is a main part to it
+      <APPLET CODE="example.class" WIDTH=320 HEIGHT=200></APPLET>
+      //^ applet tag indiactes it is a java applet and not an application
+
+      //^ the part that says CODE="example.class" mean it will be running a file called example
+
+      // the WIDTH and HEIGHT indicate the dimentions of the applet GUI
+    </BODY>
+  </HTML>
+
 
 */
