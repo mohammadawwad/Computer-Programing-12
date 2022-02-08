@@ -5,7 +5,7 @@ UNDERSTANDING CONCEPTS
 
 
 1)
-
+  Models help programmer better visualize and understand there work flow and how they will go about solving a problem. The 2 types of models are flowcharts and algorithms which can be lebeled with squares, slanted squares, triangles, and dimonds all used for different puropses 
 
 2)
   A class is a blueprint of an object. You can think of a class as a concept, and the object is the embodiment of that concept and an instance of the class. You need to have a class before you can create an object. So, let's say you want to use a person in your program. You want to be able to describe the person and have the person do something. A class called 'person' would provide a blueprint for what a person looks like and what a person can do. To actually use a person in your program, you need to create an object. You use the person class to create an object of the type 'person.' Now you can describe this person and have it do something. Classes are very useful in programming. Consider the example of where you don't want to use just one person but 100 people. Rather than describing each one in detail from scratch, you can use the same person class to create 100 objects of the type 'person.' You still have to give each one a name and other properties, but the basic structure of what a person looks like is the same.
@@ -61,7 +61,7 @@ APPLYING TECHNOLOGY SKILLS
     private Core core;
 
     private int size = Orange.size();
-    //^ this is an example of composition as it is connected to another class and method within it
+    //^ "Orange" this is an example of assosiation as it interacts with another class. The ".size()" is the composition as the current class has direct access to it.
 
     private int Type();
 
