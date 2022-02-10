@@ -1,2 +1,2 @@
 language = "java"
-run = "javac ./Snowman/snowman.java"
+run = "javac "
