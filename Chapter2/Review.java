@@ -5,7 +5,7 @@ UNDERSTANDING CONCEPTS
 
 
 1)
-
+  Models help programmer better visualize and understand there work flow and how they will go about solving a problem. The 2 types of models are flowcharts and algorithms which can be lebeled with squares, slanted squares, triangles, and dimonds all used for different puropses 
 
 2)
   A class is a blueprint of an object. You can think of a class as a concept, and the object is the embodiment of that concept and an instance of the class. You need to have a class before you can create an object. So, let's say you want to use a person in your program. You want to be able to describe the person and have the person do something. A class called 'person' would provide a blueprint for what a person looks like and what a person can do. To actually use a person in your program, you need to create an object. You use the person class to create an object of the type 'person.' Now you can describe this person and have it do something. Classes are very useful in programming. Consider the example of where you don't want to use just one person but 100 people. Rather than describing each one in detail from scratch, you can use the same person class to create 100 objects of the type 'person.' You still have to give each one a name and other properties, but the basic structure of what a person looks like is the same.
@@ -33,6 +33,71 @@ APPLYING TECHNOLOGY SKILLS
     //^ these are the objects
   }
 
+
+2)
+  public class Apple{
+    private int color;
+    private int type;
+    //^ both color and type would be examples of fields
+
+    public int getColor(){
+      return color;
+    }
+    //^ getColor() is a method
+
+    public int getType(){
+      return type;
+    }
+    //^ getType() is another method
+  }
+
+
+3)
+  public class Apple extends Fruit{
+    //^ when creating the class the 'extends' key word is the sepcialization which allows you to inherit the parent component and make it more detailed
+
+    private Stem stem;
+    private Peel peel;
+    private Core core;
+
+    private int size = Orange.size();
+    //^ "Orange" this is an example of assosiation as it interacts with another class. The ".size()" is the composition as the current class has direct access to it.
+
+    private int Type();
+
+    public int getType(){
+      return type;
+    }
+  }
+
+4)
+  x = a + b;              //good
+  x equals a plus b;      //syntax error
+  x = a - b;              //semantic error
+  c = b + a;              //symantic error
+  x = (b + a);            //good
+  a + b = x;              //syntax error
+  x = a * b;              //semantic error
+  assign (a + b) to x;    //syntax error
+
+
+5)
+  <HTML>
+    <HEAD>
+      <TITLE>Java Programming ins Fun!</TITLE>
+      //^ the title tag indicates that there will be title at the top saying 'Java Programming is Fun!'
+    </HEAD>
+
+    <BODY>
+    //^ body tag indicates that there is a main part to it
+      <APPLET CODE="example.class" WIDTH=320 HEIGHT=200></APPLET>
+      //^ applet tag indiactes it is a java applet and not an application
+
+      //^ the part that says CODE="example.class" mean it will be running a file called example
+
+      // the WIDTH and HEIGHT indicate the dimentions of the applet GUI
+    </BODY>
+  </HTML>
 
 
 */

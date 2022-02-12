@@ -1,2 +1,2 @@
-language = "bash"
-run = "javac snowman/Snowman.java"
+language = "java"
+run = "javac "
