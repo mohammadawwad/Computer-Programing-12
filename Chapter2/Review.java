@@ -1,3 +1,5 @@
+
+
 /* 
 
 UNDERSTANDING CONCEPTS
@@ -89,13 +91,13 @@ APPLYING TECHNOLOGY SKILLS
     </HEAD>
 
     <BODY>
-    //^ body tag indicates that there is a main part to it
+    //^ body tag indicates that there is a main part to the applet
       <APPLET CODE="example.class" WIDTH=320 HEIGHT=200></APPLET>
       //^ applet tag indiactes it is a java applet and not an application
 
       //^ the part that says CODE="example.class" mean it will be running a file called example
 
-      // the WIDTH and HEIGHT indicate the dimentions of the applet GUI
+      // the WIDTH and HEIGHT indicate the dimentions of the applet GUI in pixel dimensions
     </BODY>
   </HTML>
 
