@@ -1,4 +1,6 @@
- import java.util.Random;
+package randomNumbers;
+
+import java.util.Random;
  
  /**
  * Demonstrates the Random class.
