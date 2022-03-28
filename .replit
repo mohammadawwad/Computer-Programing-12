@@ -1,2 +1,2 @@
 language = "java"
-run = "javac ./animals/Pets.java"
+run = "javac ./random/RandomNum.java"
