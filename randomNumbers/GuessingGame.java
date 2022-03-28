@@ -1,4 +1,4 @@
-package randomNumbers;
+package random;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -14,27 +14,28 @@ import java.util.Random;
                 
                 //gloabals variables
                 int userNum;
-                int computerNum;
+                
+                //creates random number between 0 to 10
+                int computerNum = r.nextInt(11);
+                
+                //number of tries it took you to guess correctly
+                int count = 1;
                 
                 //keeps laying untill number is correct
                 do {
-                    //creates random number between 0 to 10
-                    computerNum = r.nextInt(11);
-                
                     //asks for user input
                     System.out.println("Guess The Number: ");
                     userNum = input.nextInt();
-                    
-                    //outputs the numbers
-                    System.out.println("Your Number: " + userNum);
-                    System.out.println("Computer Number: " + computerNum);
+                   
                     
                     //outputs you win
                     if(computerNum == userNum){
                         System.out.println("You Win!");
+                        System.out.println("It took you: " + count + " tries");
                     } 
                     else {
                         System.out.println("Try Again \n");
+                        count++;
                    }
                 }while(userNum != computerNum);
 
