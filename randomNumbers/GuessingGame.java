@@ -2,14 +2,12 @@ package random;
 
 import java.util.Scanner;
 import java.util.Random;
- 
- /**
- * Demonstrates the Random class.
- */
+
+
  public class GuessingGame {
 
 	public static void main(String[] args) {
-                Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 		Random r = new Random();
                 
                 //gloabals variables
@@ -28,7 +26,7 @@ import java.util.Random;
                     userNum = input.nextInt();
                    
                     
-                    //outputs you win
+                    //outputs you win or try again
                     if(computerNum == userNum){
                         System.out.println("You Win!");
                         System.out.println("It took you: " + count + " tries");

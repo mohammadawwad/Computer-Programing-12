@@ -2,10 +2,8 @@ package randomNumbers;
 
 import java.util.Scanner;
 import java.util.Random;
- 
- /**
- * Demonstrates the Random class.
- */
+
+
  public class SnakeEyes {
 
 	public static void main(String[] args) {
@@ -22,7 +20,7 @@ import java.util.Random;
                     num1 = r.nextInt(6) + 1;
                     num2 = r.nextInt(6) + 1;
                     
-                    if(num1 == num2){
+                     if((num1 == 1) && (num2 == 1)){
                         count++;
                     }
                 }

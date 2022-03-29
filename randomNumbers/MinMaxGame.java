@@ -3,9 +3,7 @@ package randomNumbers;
 import java.util.Scanner;
 import java.util.Random;
  
- /**
- * Demonstrates the Random class.
- */
+
  public class MinMaxGame {
 
 	public static void main(String[] args) {

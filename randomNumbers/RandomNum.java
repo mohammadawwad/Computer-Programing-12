@@ -2,9 +2,7 @@ package randomNumbers;
 
 import java.util.Random;
  
- /**
- * Demonstrates the Random class.
- */
+
  public class RandomNum {
 
 	public static void main(String[] args) {
