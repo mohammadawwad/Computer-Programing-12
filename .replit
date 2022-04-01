@@ -1,2 +1,2 @@
 language = "java"
-run = "javac ./random/RandomNum.java"
+run = "java ./randomNumbers/RandomNum"
