@@ -8,10 +8,12 @@ class RockPaperScizzors {
         //Initialize the Scanner and print a welcome message
         Scanner in = new Scanner(System.in);		
         System.out.println("Welcome to Rock, Paper, Scissors!");
+        int playerScore = 0;
+        int computerScore = 0;
 
         //Use a while(true) loop and only break the loop if the user wants to quit
         while(true) {
-
+            
             //Get the user's move through user input
             System.out.println();
             System.out.println("What is your move? To make a move, enter rock, paper, or scissors. To quit the game, enter quit. ");
@@ -50,13 +52,19 @@ class RockPaperScizzors {
                         
                 } else if((myMove.equals("rock") && opponentMove.equals("scissors")) || (myMove.equals("scissors") && opponentMove.equals("paper")) || (myMove.equals("paper") && opponentMove.equals("rock"))) {
                         System.out.println("You won!");
+                        playerScore += 1;
                         System.out.println();
                         
                 } else {
                         System.out.println("You lost!");
+                        computerScore += 1;
                         System.out.println();
                 }
 
+                
+                //outputs the score
+                System.out.println("Your Score: " + playerScore);
+                System.out.println("Computer Score: " + computerScore);
             }
 
         }
