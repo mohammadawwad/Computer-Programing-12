@@ -86,6 +86,7 @@ import java.util.List;
                     System.out.println(listCounter);
                     
                     //loops through list of your rolls and adds it to count
+                    count = 0;
                     for (int i: listCounter) {
                         count += i;
                     }
