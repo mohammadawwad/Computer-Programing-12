@@ -8,30 +8,44 @@ class RockPaperScizzors {
     private static int computerScore = 0;
     private static String opponentMove;
     private static String myMove;
+    private static String opponentOutput;
     
     public static void main(String[] args) {
 
         //Initialize the Scanner and print a welcome message
         Scanner in = new Scanner(System.in);		
         System.out.println("Welcome to Rock, Paper, Scissors!");
-        
 
         //Use a while(true) loop and only break the loop if the user wants to quit
         while(true) {
             
             //Get the user's move through user input
             System.out.println();
-            System.out.println("What is your move? To make a move, enter rock, paper, or scissors. To quit the game, enter quit. ");
-            System.out.print("Your Move: ");
+            System.out.print("Enter Your Throw (1=Rock, 2=Paper, 3=Scissors 4=quit) : ");
             myMove = in.nextLine();
+            
+            switch (myMove) {
+                case "1":
+                    System.out.println("Player Throws: Rock");
+                    break;
+                case "2":
+                    System.out.println("Player Throws: Paper");
+                    break;
+                case "3":
+                    System.out.println("Player Throws: Scissors");
+                    break;
+                default:
+                    break;
+            }
+            
 
             //Check if the user wants to quit the game
-            if(myMove.equals("quit")) {
+            if(myMove.equals("4")) {
                 break;
             }
 
             //Check if the user's move is valid (rock, paper, or scissors)
-            if(!myMove.equals("rock") && !myMove.equals("paper") && !myMove.equals("scissors")) {
+            if(!myMove.equals("1") && !myMove.equals("2") && !myMove.equals("3")) {
                 System.out.println("Your move isn't valid!");
 
             } else {
@@ -40,14 +54,21 @@ class RockPaperScizzors {
                 int rand = (int)(Math.random()*3);
 
                 //Convert the random number to a string using conditionals and print the opponent's move
-                if(rand == 0) {
-                        opponentMove = "rock";
-                } else if(rand == 1) {
-                        opponentMove = "paper";
-                } else {
-                        opponentMove = "scissors";
+                switch (rand) {
+                    case 0:
+                        opponentMove = "1";
+                        opponentOutput = "Rock";
+                        break;
+                    case 1:
+                        opponentMove = "2";
+                        opponentOutput = "Paper";
+                        break;
+                    case 3:
+                        opponentMove = "3";
+                        opponentOutput = "Scissors";
+                        break;
                 }
-                System.out.println("Opponent's Move: " + opponentMove);
+                System.out.println("Computer Throws: " + opponentOutput);
 
                 //outputs win tie or lose
                 results();
@@ -69,7 +90,7 @@ class RockPaperScizzors {
                 System.out.println("It's a tie!");
                 System.out.println();
 
-        } else if((myMove.equals("rock") && opponentMove.equals("scissors")) || (myMove.equals("scissors") && opponentMove.equals("paper")) || (myMove.equals("paper") && opponentMove.equals("rock"))) {
+        } else if((myMove.equals("1") && opponentMove.equals("3")) || (myMove.equals("3") && opponentMove.equals("2")) || (myMove.equals("2") && opponentMove.equals("1"))) {
                 System.out.println("You won!");
                 playerScore += 1;
                 System.out.println();
