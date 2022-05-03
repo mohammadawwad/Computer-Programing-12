@@ -1,14 +1,16 @@
 package randomNumbers;
 
+import java.util.Random;
 import java.util.Scanner;
 
 class RockPaperScizzors {
-    //global variables
+    //global static variables
     private static int playerScore = 0;
     private static int computerScore = 0;
     private static String opponentMove;
     private static String myMove;
     private static String opponentOutput;
+    private static Random r = new Random();
     
     public static void main(String[] args) {
 
@@ -18,7 +20,6 @@ class RockPaperScizzors {
 
         //Use a while(true) loop and only break the loop if the user wants to quit
         while(true) {
-            
             //Get the user's move through user input
             System.out.println();
             System.out.print("Enter Your Throw (1=Rock, 2=Paper, 3=Scissors 4=quit) : ");
@@ -51,7 +52,7 @@ class RockPaperScizzors {
             } else {
 
                 //Get a random number in between 0 and 3 and convert it to an integer so that the possibilities are 0, 1, or 2
-                int rand = (int)(Math.random()*3);
+                int rand = r.nextInt(3);
 
                 //Convert the random number to a string using conditionals and print the opponent's move
                 switch (rand) {
@@ -63,7 +64,7 @@ class RockPaperScizzors {
                         opponentMove = "2";
                         opponentOutput = "Paper";
                         break;
-                    case 3:
+                    case 2:
                         opponentMove = "3";
                         opponentOutput = "Scissors";
                         break;
