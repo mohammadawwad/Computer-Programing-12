@@ -17,7 +17,7 @@ public static class SimpleSwitch {
         SATURDAY("Nobody Aailble"),
         SUNDAY("Mohammad");
         
-        public final String employee;
+        private final String employee;
 
         private DayOfWeek(String employee) {
             this.employee = employee;
