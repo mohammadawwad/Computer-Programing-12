@@ -3,10 +3,9 @@ import java.util.Scanner;
 
 
 public class Enum {
-    // Simple switch statement example no breaks 
+// Simple switch statement example no breaks 
  
 public static class SimpleSwitch { 
- 
 
     // Enumeration for the day of the week and who is working
     enum DayOfWeek { 
@@ -32,7 +31,7 @@ public static class SimpleSwitch {
         String inputedDay = input.nextLine().toUpperCase();
         
         //instantiating object of enum
-        DayOfWeek day;
+        DayOfWeek day = null;
         
         //creating objetc for the enum
         switch(inputedDay){
