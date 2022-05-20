@@ -46,7 +46,7 @@ class ChooseEnum{
         //assigns the num based of the random number generated
         switch(random.nextInt(4)){
             case 0:
-                cards = CardsEnum.HEARTS;
+                cards = CardsEnum.HEARTS
                 break;
                 
             case 1:
