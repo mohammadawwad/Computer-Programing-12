@@ -18,7 +18,11 @@ public class TowersOfHannoi {
         
         
         calculateMovesNum();
-        moveDiskAlgo();
+        System.out.println("Number Of Moves Required: " + numOfMoves);
+        showOutput();
+        
+        //moving everything from A to C with pole B being the middle man
+        moveDiskAlgo(numOfDisks, 'A', 'C' , 'B');
     }
     
     //all the poles that will be used                         - 1   index 0 of array
@@ -37,67 +41,23 @@ public class TowersOfHannoi {
         return numOfMoves;
     }
 
-    public static void moveDiskAlgo() {
-//  1. Calculate the total number of moves required i.e. "pow(2, n)- 1" here n is number of disks.
-
-//  2. If number of disks (i.e. n) is even then interchange destination pole and auxiliary pole.
-
-//  3. for i = 1 to total number of moves:
-//          if i%3 == 1:
-//              legal movement of top disk between pole A and pole C
-//          if i%3 == 2:
-//              legal movement of top disk between pole A and pole B
-//          if i%3 == 0:
-//              legal movement of top disk between pole B and pole C 
-
-        System.out.println("Number Of Moves Required: " + numOfMoves);
-        
-          
-        
-           
-            for(int moveCount = 1; moveCount < 7; moveCount++){
-                
-//                calculateMovesNum();
-                
-//                if(numOfDisks % 2 == 0){
-//                    //decides where the disk will be moved too
-//                    if(moveCount % 3 == 1){
-//                        moveDisk("AtoB");
-//                        showOutput();
-//                    }
-//                    if(moveCount % 3 == 2){
-//                        moveDisk("AtoC");
-//                        showOutput();
-//                    }
-//                    if(moveCount % 3 == 0){
-//                        moveDisk("BtoA");
-//                        showOutput();
-//                    }
-//                } 
-                
-//                else {
-                    
-                    //decides where the disk will be moved too
-                    if(moveCount % 3 == 1){
-                        moveDisk("AtoC");
-                        showOutput();
-                    }
-                    if(moveCount % 3 == 2){
-                        moveDisk("AtoB");
-                        showOutput();
-                    }
-                    if(moveCount % 3 == 0){
-                        moveDisk("CtoB");
-                        showOutput();
-                    }
-//                }
-
-            }
-        
-        
-        
-    }
     
+    
+    public static void moveDiskAlgo(int diskNumbers, char source, char dest, char middleMan){
+            if(diskNumbers == 1){
+                moveDisk(source + "to" + dest);
+                showOutput();
+                return;
+            }
+            
+            moveDiskAlgo(diskNumbers - 1, source, middleMan, dest);
+            showOutput();
+            moveDisk(source + "to" + dest);
+            showOutput();
+            
+            moveDiskAlgo(diskNumbers - 1, middleMan, dest, source);
+            showOutput();
+    }
 
     
     
@@ -161,21 +121,46 @@ public class TowersOfHannoi {
     //outputting the numbers that represent the disks in each pole
     public static void showOutput(){
         
+        boolean hasA = false, hasB = false, hasC = false;
+       
+        
         System.out.println("\nOutput: ");
         System.out.println("A:");
         for(int x = 0; x < poleA.size(); x++){
           System.out.println(poleA.get(x));
+          hasA = true;
         }
       
         System.out.println("\nB:");
         for(int y = 0; y < poleB.size(); y++){
           System.out.println(poleB.get(y));
+          hasB = true;
         }
         
         System.out.println("\nC:");
         for(int z = 0; z < poleC.size(); z++){
           System.out.println(poleC.get(z));
+          hasC = true;
         }
+       
+        for(int counter = 0; counter < numOfDisks; counter++){
+            if(hasA && hasB && hasC){
+                System.out.printf("%-10s %-10s %-10s\n", poleA.get(0), poleB.get(0), poleC.get(0));
+                continue;
+            }
+            
+            if(hasA && hasB){
+                System.out.printf("%-10s %-10s\n", poleA.get(0), poleB.get(0));
+                continue;
+            }
+            
+            if(hasA){
+                System.out.printf("%-10s\n", poleA.get(0));
+                continue;
+            }
+            
+        }
+        System.out.printf("%-10s %-10s %-10s\n", "A", "B", "C");
     }
     
  
