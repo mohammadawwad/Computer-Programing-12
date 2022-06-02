@@ -51,12 +51,12 @@ public class TowersOfHannoi {
             }
             
             moveDiskAlgo(diskNumbers - 1, source, middleMan, dest);
-            showOutput();
+//            showOutput();
             moveDisk(source + "to" + dest);
             showOutput();
             
             moveDiskAlgo(diskNumbers - 1, middleMan, dest, source);
-            showOutput();
+//            showOutput();
     }
 
     
@@ -121,46 +121,61 @@ public class TowersOfHannoi {
     //outputting the numbers that represent the disks in each pole
     public static void showOutput(){
         
-        boolean hasA = false, hasB = false, hasC = false;
-       
-        
         System.out.println("\nOutput: ");
-        System.out.println("A:");
-        for(int x = 0; x < poleA.size(); x++){
-          System.out.println(poleA.get(x));
-          hasA = true;
-        }
-      
-        System.out.println("\nB:");
-        for(int y = 0; y < poleB.size(); y++){
-          System.out.println(poleB.get(y));
-          hasB = true;
-        }
-        
-        System.out.println("\nC:");
-        for(int z = 0; z < poleC.size(); z++){
-          System.out.println(poleC.get(z));
-          hasC = true;
-        }
        
         for(int counter = 0; counter < numOfDisks; counter++){
-            if(hasA && hasB && hasC){
-                System.out.printf("%-10s %-10s %-10s\n", poleA.get(0), poleB.get(0), poleC.get(0));
-                continue;
-            }
+                try{
+                    if((poleA.get(counter)!= null) && (poleB.get(counter) != null) && (poleC.get(counter) != null)){
+                        System.out.printf("%-10s %-10s %-10s \n", poleA.get(counter), poleB.get(counter), poleC.get(counter));
+                        continue;
+                    }
+                }catch(Exception e){}
+
+                try{
+                    if((poleA.get(counter)!= null) && (poleB.get(counter) != null)){
+                        System.out.printf("%-10s %s\n", poleA.get(counter), poleB.get(counter));
+                        continue;
+                    }
+                }catch(Exception e){}
+                
+                
+                try{
+                    if((poleA.get(counter)!= null) && (poleC.get(counter) != null)){
+                        System.out.printf("%-21s %s\n", poleA.get(counter), poleC.get(counter));
+                        continue;
+                    }
+                }catch(Exception e){}
+
+                try{
+                    if((poleB.get(counter)!= null) && (poleC.get(counter) != null)){
+                        System.out.printf("%12s %10s\n", poleB.get(counter), poleC.get(counter));
+                        continue;
+                    }
+                }catch(Exception e){}
+                                
             
-            if(hasA && hasB){
-                System.out.printf("%-10s %-10s\n", poleA.get(0), poleB.get(0));
-                continue;
-            }
-            
-            if(hasA){
-                System.out.printf("%-10s\n", poleA.get(0));
-                continue;
-            }
+                try{
+                    if(poleA.get(counter) != null)
+                    System.out.printf("%-10s\n", poleA.get(counter));
+                    continue;
+                }catch(Exception e){}
+
+                try{
+                    if(poleB.get(counter) != null)
+                    System.out.printf("%12s\n", poleB.get(counter));
+                    continue;
+                }catch(Exception e){}
+
+                try{
+                    if(poleC.get(counter) != null)
+                    System.out.printf("%23s\n", poleC.get(counter));
+                    continue;
+                }catch(Exception e){}
+
             
         }
         System.out.printf("%-10s %-10s %-10s\n", "A", "B", "C");
+        System.out.printf("%-9s %-9s %-10s\n", "▔", "▔", "▔");
     }
     
  
