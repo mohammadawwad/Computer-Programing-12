@@ -2,6 +2,7 @@
 package algos;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class TowersOfHannoi {
@@ -11,12 +12,19 @@ public class TowersOfHannoi {
     static int numOfMoves;
         
     public static void main(String[] args){
-        //adding three disks to pole 1
-        poleA.add(1);
-        poleA.add(2);
-        poleA.add(3);
         
+        //adding the amount of poles you want to the first pole
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Towers Of Hannoi, how many poles would you like to start with?");
+        System.out.print("Starting Number: ");
+        int amountOfDisks = input.nextInt();
         
+        //looping over amount of disks wanted and creating them
+        for(int x = 1; x < amountOfDisks + 1; x++){
+            poleA.add(x);
+        }
+        
+        //calculating the number of moves required to finish the problem
         calculateMovesNum();
         System.out.println("Number Of Moves Required: " + numOfMoves);
         showOutput();
@@ -42,6 +50,9 @@ public class TowersOfHannoi {
     }
 
     
+    //recursive function for deciding where the disk will be moved to based on the moves required to finish the problem and how many disks there are
+    
+    
     
     public static void moveDiskAlgo(int diskNumbers, char source, char dest, char middleMan){
             if(diskNumbers == 1){
@@ -51,12 +62,10 @@ public class TowersOfHannoi {
             }
             
             moveDiskAlgo(diskNumbers - 1, source, middleMan, dest);
-//            showOutput();
             moveDisk(source + "to" + dest);
             showOutput();
             
             moveDiskAlgo(diskNumbers - 1, middleMan, dest, source);
-//            showOutput();
     }
 
     
